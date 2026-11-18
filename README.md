@@ -162,4 +162,8 @@ api-manager/
 
 ## 许可
 
-MIT
+[MIT License](LICENSE) — © 2026 ZMCNET
+
+详见 [LICENSE](LICENSE)。
+
+原声明：MIT
