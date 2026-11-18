@@ -1,0 +1,20 @@
+# Apache 兼容（可选，使用 Apache 时启用）
+# 注意：本项目主要部署目标是 Nginx 1.26，请优先使用 nginx.conf.example
+RewriteEngine On
+
+# 静态资源直接通过
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# 阻止访问敏感目录
+RewriteRule ^(src|controllers|views|sql|data|bootstrap\.php|config\.php) - [F,L]
+
+# 其他请求转发到 index.php
+RewriteRule ^ index.php [L]
+
+# 安全头
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>

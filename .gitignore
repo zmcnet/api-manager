@@ -1,0 +1,7 @@
+# 安装向导生成的真实配置（含密钥与数据库密码）
+config.php
+
+# 系统
+.DS_Store
+Thumbs.db
+*.log
